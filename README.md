@@ -12,6 +12,6 @@ Fork privé du [repository Pagila pour postgres](https://github.com/devrimgunduz
 
 Exécuter la commande suivante: ``docker compose up -f docker-compose.dev.yml``
 
-## Arrêt 
+### Arrêt 
 
 Exécuter la commande suivante: ``docker compose down -f docker-compose.dev.yml``
