@@ -10,8 +10,15 @@ Fork privé du [repository Pagila pour postgres](https://github.com/devrimgunduz
 
 ### Mise en marche
 
-Exécuter la commande suivante: ``docker compose up -f docker-compose.dev.yml``
+Définir dans un fichier ``.env`` l'utilisateur et le mot de passe pour la base des données.
+
+```
+PAGILA_USER=...
+PAGILA_PASSWORD=...
+```
+
+Exécuter la commande suivante: ``docker compose up``
 
 ### Arrêt 
 
-Exécuter la commande suivante: ``docker compose down -f docker-compose.dev.yml``
+Exécuter la commande suivante: ``docker compose down``
