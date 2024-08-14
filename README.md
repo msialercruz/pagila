@@ -17,8 +17,8 @@ PAGILA_USER=...
 PAGILA_PASSWORD=...
 ```
 
-Exécuter la commande suivante: ``docker compose up``
+Exécuter la commande suivante: ``docker compose up -f docker-compose.dev.yml -d``
 
 ### Arrêt 
 
-Exécuter la commande suivante: ``docker compose down``
+Exécuter la commande suivante: ``docker compose down -f docker-compose.dev.yml``
