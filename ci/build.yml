@@ -1,0 +1,52 @@
+resources:
+    - name: git-repo
+      type: git
+      icon: github
+      source:
+          uri: git@github.com:msialercruz/pagila.git
+          private_key: ((github_private_key))
+          branch: develop # TODO: change this to master
+
+    - name: docker-pagila-image
+      type: docker-image
+      source:
+          repository: ((pagila_dockerhub_repo))
+          username: ((dockerhub_user))
+          password: ((dockerhub_password))
+
+jobs:
+    - name: build-and-push-pagila
+      plan:
+          - get: git-repo
+            trigger: true
+
+          - task: check-version
+            config:
+                platform: linux
+                image_resource:
+                    type: registry-image
+                    source:
+                        repository: concourse/git-resource
+                outputs:
+                    - name: git-repo
+                inputs:
+                    - name: git-repo
+                run:
+                    path: /bin/sh
+                    args:
+                        - -cx
+                        - |
+                            cd git-repo
+                            LAST_TAGGED_COMMIT=$(git rev-list --tags --max-count=1 2> /dev/null)
+                            if [ ! -z "$LAST_TAGGED_COMMIT" ]; then
+                                LATEST_TAG=$(git describe --tags $LAST_TAGGED_COMMIT)
+                            else
+                                LATEST_TAG=((pagila_dockerhub_default_tag))
+                            fi
+                            echo "$LATEST_TAG" >> VERSION
+
+          - put: docker-pagila-image
+            params:
+                build: git-repo
+                tag_file: git-repo/VERSION
+                tag_as_latest: true
