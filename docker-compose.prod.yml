@@ -1,11 +1,12 @@
+version: '3'
 services:
     pagila:
         build: .
         container_name: pagila
         hostname: pagila
-        environment:
-            POSTGRES_PASSWORD: ${PAGILA_PASSWORD}
-            POSTGRES_USER: ${PAGILA_USER}
+        # environment:
+        #     POSTGRES_PASSWORD: ${PAGILA_PASSWORD}
+        #     POSTGRES_USER: ${PAGILA_USER}
         expose:
             - 5432
         networks:
