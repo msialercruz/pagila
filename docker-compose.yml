@@ -28,6 +28,10 @@ services:
             - '5050:80'
         networks:
             - pagila-network
+        # TODO: serait interessant d'ajouter
+        # volumes:
+        #   - "./pgadmin/pgadmin_servers.json:/pgadmin4/servers.json"
+        #   - "./pgadmin/pgadmin_pass:/pgadmin4/pass"
 networks:
     pagila-network:
         driver: bridge

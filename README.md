@@ -10,15 +10,24 @@ Fork privé du [repository Pagila pour postgres](https://github.com/devrimgunduz
 
 ### Mise en marche
 
-Définir dans un fichier ``.env`` l'utilisateur et le mot de passe pour la base des données.
+Copier le fichier ``.env.example`` et renommer copie ``.env``.
 
+Définir ensuite le nom d'utilisateur et le mot de passe.
+
+```sh
+PAGILA_USER=nom d'utilisateur...
+PAGILA_PASSWORD=mot de passe...
 ```
-PAGILA_USER=...
-PAGILA_PASSWORD=...
+
+# Adaptabilite des scripts
+
+Au démarrage, une substitution des "placeholders" dans ``pagila-schema.sql`` et ``pagila-data.sql`` est effectué pour utiliser les variables d'environnements.
+
+Exemple:
+
+```sql
+-- original
+ALTER SCHEMA public OWNER TO ${POSTGRES_USER};
+-- devient apres subtitution
+ALTER SCHEMA public OWNER TO pagila;
 ```
-
-Exécuter la commande suivante: ``docker compose up -d``
-
-### Arrêt 
-
-Exécuter la commande suivante: ``docker compose down``

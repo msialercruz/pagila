@@ -17,7 +17,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Data for Name: actor; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: actor; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.actor (actor_id, first_name, last_name, last_update) FROM stdin;
@@ -225,7 +225,7 @@ COPY public.actor (actor_id, first_name, last_name, last_update) FROM stdin;
 
 
 --
--- Data for Name: country; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: country; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.country (country_id, country, last_update) FROM stdin;
@@ -342,7 +342,7 @@ COPY public.country (country_id, country, last_update) FROM stdin;
 
 
 --
--- Data for Name: city; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: city; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.city (city_id, city, country_id, last_update) FROM stdin;
@@ -950,7 +950,7 @@ COPY public.city (city_id, city, country_id, last_update) FROM stdin;
 
 
 --
--- Data for Name: address; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: address; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.address (address_id, address, address2, district, city_id, postal_code, phone, last_update) FROM stdin;
@@ -1561,7 +1561,7 @@ COPY public.address (address_id, address, address2, district, city_id, postal_co
 
 
 --
--- Data for Name: category; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: category; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.category (category_id, name, last_update) FROM stdin;
@@ -1585,7 +1585,7 @@ COPY public.category (category_id, name, last_update) FROM stdin;
 
 
 --
--- Data for Name: store; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: store; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.store (store_id, manager_staff_id, address_id, last_update) FROM stdin;
@@ -2093,7 +2093,7 @@ COPY public.store (store_id, manager_staff_id, address_id, last_update) FROM std
 
 
 --
--- Data for Name: customer; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: customer; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.customer (customer_id, store_id, first_name, last_name, email, address_id, activebool, create_date, last_update, active) FROM stdin;
@@ -2700,7 +2700,7 @@ COPY public.customer (customer_id, store_id, first_name, last_name, email, addre
 
 
 --
--- Data for Name: language; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: language; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.language (language_id, name, last_update) FROM stdin;
@@ -2714,7 +2714,7 @@ COPY public.language (language_id, name, last_update) FROM stdin;
 
 
 --
--- Data for Name: film; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: film; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.film (film_id, title, description, release_year, language_id, original_language_id, rental_duration, rental_rate, length, replacement_cost, rating, last_update, special_features, fulltext) FROM stdin;
@@ -3722,7 +3722,7 @@ COPY public.film (film_id, title, description, release_year, language_id, origin
 
 
 --
--- Data for Name: film_actor; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: film_actor; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.film_actor (actor_id, film_id, last_update) FROM stdin;
@@ -9192,7 +9192,7 @@ COPY public.film_actor (actor_id, film_id, last_update) FROM stdin;
 
 
 --
--- Data for Name: film_category; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: film_category; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.film_category (film_id, category_id, last_update) FROM stdin;
@@ -11567,7 +11567,7 @@ COPY public.film_category (film_id, category_id, last_update) FROM stdin;
 
 
 --
--- Data for Name: inventory; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: inventory; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.inventory (inventory_id, film_id, store_id, last_update) FROM stdin;
@@ -16156,7 +16156,7 @@ COPY public.inventory (inventory_id, film_id, store_id, last_update) FROM stdin;
 
 
 --
--- Data for Name: staff; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: staff; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.staff (staff_id, first_name, last_name, address_id, email, store_id, active, username, password, last_update, picture) FROM stdin;
@@ -17664,7 +17664,7 @@ COPY public.staff (staff_id, first_name, last_name, address_id, email, store_id,
 
 
 --
--- Data for Name: rental; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: rental; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.rental (rental_id, rental_date, inventory_id, customer_id, return_date, staff_id, last_update) FROM stdin;
@@ -33716,7 +33716,7 @@ COPY public.rental (rental_id, rental_date, inventory_id, customer_id, return_da
 
 
 --
--- Data for Name: payment_p2022_01; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: payment_p2022_01; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.payment_p2022_01 (payment_id, customer_id, staff_id, rental_id, amount, payment_date) FROM stdin;
@@ -34447,7 +34447,7 @@ COPY public.payment_p2022_01 (payment_id, customer_id, staff_id, rental_id, amou
 
 
 --
--- Data for Name: payment_p2022_02; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: payment_p2022_02; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.payment_p2022_02 (payment_id, customer_id, staff_id, rental_id, amount, payment_date) FROM stdin;
@@ -36856,7 +36856,7 @@ COPY public.payment_p2022_02 (payment_id, customer_id, staff_id, rental_id, amou
 
 
 --
--- Data for Name: payment_p2022_03; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: payment_p2022_03; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.payment_p2022_03 (payment_id, customer_id, staff_id, rental_id, amount, payment_date) FROM stdin;
@@ -39577,7 +39577,7 @@ COPY public.payment_p2022_03 (payment_id, customer_id, staff_id, rental_id, amou
 
 
 --
--- Data for Name: payment_p2022_04; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: payment_p2022_04; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.payment_p2022_04 (payment_id, customer_id, staff_id, rental_id, amount, payment_date) FROM stdin;
@@ -42132,7 +42132,7 @@ COPY public.payment_p2022_04 (payment_id, customer_id, staff_id, rental_id, amou
 
 
 --
--- Data for Name: payment_p2022_05; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: payment_p2022_05; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.payment_p2022_05 (payment_id, customer_id, staff_id, rental_id, amount, payment_date) FROM stdin;
@@ -44817,7 +44817,7 @@ COPY public.payment_p2022_05 (payment_id, customer_id, staff_id, rental_id, amou
 
 
 --
--- Data for Name: payment_p2022_06; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: payment_p2022_06; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.payment_p2022_06 (payment_id, customer_id, staff_id, rental_id, amount, payment_date) FROM stdin;
@@ -47479,7 +47479,7 @@ COPY public.payment_p2022_06 (payment_id, customer_id, staff_id, rental_id, amou
 
 
 --
--- Data for Name: payment_p2022_07; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: payment_p2022_07; Type: TABLE DATA; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 COPY public.payment_p2022_07 (payment_id, customer_id, staff_id, rental_id, amount, payment_date) FROM stdin;
@@ -49821,91 +49821,91 @@ COPY public.payment_p2022_07 (payment_id, customer_id, staff_id, rental_id, amou
 
 
 --
--- Name: actor_actor_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: actor_actor_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.actor_actor_id_seq', 200, true);
 
 
 --
--- Name: address_address_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: address_address_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.address_address_id_seq', 605, true);
 
 
 --
--- Name: category_category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: category_category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.category_category_id_seq', 16, true);
 
 
 --
--- Name: city_city_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: city_city_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.city_city_id_seq', 600, true);
 
 
 --
--- Name: country_country_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: country_country_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.country_country_id_seq', 109, true);
 
 
 --
--- Name: customer_customer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: customer_customer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.customer_customer_id_seq', 599, true);
 
 
 --
--- Name: film_film_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: film_film_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.film_film_id_seq', 1000, true);
 
 
 --
--- Name: inventory_inventory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: inventory_inventory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.inventory_inventory_id_seq', 4581, true);
 
 
 --
--- Name: language_language_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: language_language_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.language_language_id_seq', 6, true);
 
 
 --
--- Name: payment_payment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: payment_payment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.payment_payment_id_seq', 32098, true);
 
 
 --
--- Name: rental_rental_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: rental_rental_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.rental_rental_id_seq', 16049, true);
 
 
 --
--- Name: staff_staff_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: staff_staff_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.staff_staff_id_seq', 1500, true);
 
 
 --
--- Name: store_store_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: store_store_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ${POSTGRES_USER}
 --
 
 SELECT pg_catalog.setval('public.store_store_id_seq', 500, true);

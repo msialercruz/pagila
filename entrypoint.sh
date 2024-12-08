@@ -1,7 +1,8 @@
 #!/bin/sh
 
-# will only replace ${POSTGRES_USER} placeholders with actual os variable value
-envsubst '${POSTGRES_USER}' < /tmp/pagila-schema.sql > /docker-entrypoint-initdb.d/1-pagila-schema.sql
+# subtitue placeholders ${POSTGRES_USER} avec valeur de variable
+envsubst '${POSTGRES_USER}' < /tmp/pagila-schema-template.sql > /docker-entrypoint-initdb.d/1-pagila-schema.sql
+envsubst '${POSTGRES_USER}' < /tmp/pagila-data-template.sql > /docker-entrypoint-initdb.d/2-pagila-data.sql
 
-# default entrypoint for postgres
-/docker-entrypoint.sh postgres
+# entrypoint par défaut
+/usr/local/bin/docker-entrypoint.sh docker-entrypoint.sh postgres
