@@ -4,7 +4,7 @@
 
 Base de données pour l'application Pagila.
 
-Fork privé du [repository Pagila pour postgres](https://github.com/devrimgunduz/pagila). Voir l'ancien [README](./PUBLIC_README.md) pour plus d'informations.
+Fork *originalement privé* du [repository Pagila pour postgres](https://github.com/devrimgunduz/pagila). Voir le [README](./ORIGINAL_README.md) original pour plus d'informations.
 
 ## Utilisation avec docker
 
@@ -19,7 +19,7 @@ PAGILA_USER=nom d'utilisateur...
 PAGILA_PASSWORD=mot de passe...
 ```
 
-# Adaptabilite des scripts
+# Adaptabilité des scripts
 
 Au démarrage, une substitution des "placeholders" dans ``pagila-schema.sql`` et ``pagila-data.sql`` est effectué pour utiliser les variables d'environnements.
 
